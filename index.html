@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8"> 
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+  <title> My Portfolio! </title>
+<link href="https://fonts.googleapis.com/css?family=Creepster|Montserrat:900" rel="stylesheet">
+  
+  
+  
+<style>
+*{
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 800px) {
+  #experiencepane, #skillspane{ 
+    width: 100%;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 400px) {
+  .job {
+    float: none;
+    width: 100%;
+  }
+}
+body{
+  padding: 0;
+  margin: 0;
+}
+#toppane{
+  width: 100%;
+  background-color: #333;
+}
+#profilepicture{
+  display: inline-block;
+  padding: 10px;
+}
+#profilepicture img{
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px black;
+}
+#profilepicture img:hover{
+  filter: brightness(110%);
+}
+#contactdetails{
+  display: inline-block;
+  position: absolute;
+  color: white;
+  padding: 30px 0 0 10px;
+  margin: 0 0 0 0;
+  font-size: 13px;
+}
+#name{
+  font-size: 25px;
+}
+#email a{
+  text-decoration: none;
+  color: lightgreen;
+}
+#email a:hover{
+  color: white;
+}
+#facebook{
+  float: left;
+  display: inline-block;
+  background-color: #3b5998;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  color: white;
+  font-size: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: inset 0 0 2px black;
+}
+#facebook p{
+  margin:0;
+  padding: 0 0 0 0;
+}
+#facebook:hover{
+  background-color: #496ebc;
+}
+#twitter{
+  float: left;
+  display: inline-block;
+  background-color: #0084b4;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  color: white;
+  font-size: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: inset 0 0 2px black;
+}
+#twitter:hover{
+  background-color: #0099d1;
+}
+#twitter p{
+  margin:0;
+  padding: 0;
+}
+#linkedin{
+  display: inline-block;
+  float: left;
+  background-color: #0077b5;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  color: white;
+  font-size: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: inset 0 0 2px black;
+}
+#linkedin p{
+  margin:0;
+  padding: 5px 0 0 0;
+}
+#linkedin:hover{
+  background-color: #008bd3;
+}
+#bottompane{
+  clear: both;
+}
+#experiencepane{
+  float: left;
+  width: 50%;
+}
+#skillspane{
+  float: right;
+  width: 50%;
+}
+#experiencetitle{
+  font-size: 45px;
+  color: gray;
+  text-align: center;
+  padding: 10px;
+}
+
+.joblist{
+  width: 100%;
+    height: auto;
+}
+.jobwrapper{
+  display: inline-block;
+  margin: 0 auto 0 auto;
+  background-color: transparent;
+  width: 49%;
+  height: 300px;
+  perspective: 1000px;
+  padding: 5px;
+}
+
+.job{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 1px 2px black;
+  border-radius: 25px;
+}
+
+.jobwrapper:hover .job{
+  transform: rotateX(180deg);
+}
+
+.front, .back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 25px;
+}
+
+.front{
+  background-color: #333;
+  color: white;
+  z-index: 2;
+}
+
+.back{
+  background-color: #2980b9;
+  color: white;
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.details{
+  padding: 20px;
+}
+
+.position{
+  font-size: 30px;
+  padding: 18% 0 0 0;
+  color: powderblue;
+  transform: rotate(2deg);
+}
+.company, .employmentdates, .jobaddress{
+  font-size: 20px;
+}
+.company{
+  transform: rotate(-2deg);
+}
+.employmentdates{
+  transform: rotate(2deg);
+}
+.jobaddress{
+  transform: rotate(-2deg);
+}
+#skillstitle{
+  font-size: 45px;
+  color: gray;
+  text-align: center;
+  padding: 10px;
+}
+
+#skillchart{
+  
+}
+#skillchart table{
+  margin: 0 auto 0 auto;
+  width: 80%;
+  font-weight: bold;
+  
+}
+#skillchart table td:nth-child(odd){
+  width: 10%;
+}
+.xpbar{
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  display: inline-block;
+  height: 15px;
+  box-shadow: 0 1px 3px black;
+  border-radius: 3px;
+  text-shadow: 0 1px 3px black;
+}
+
+#educationtitle{
+  font-size: 45px;
+  color: gray;
+  text-align: center;
+  padding: 30px 10px 10px 10px;
+}
+#educationpane{
+  text-align: center;
+  margin: 0 auto 0 auto;
+}
+.schoollisting{
+  display: inline-block;
+  width: 45%;
+}
+.schoolicon{
+  font-size: 80px;
+  color: gray;
+  float: left;
+  transition: 1s;
+  padding:  0 0 0 10px; 
+}
+.schoollisting:hover .schoolicon{
+  color: gold;
+  transition: 1s;
+}
+.school{
+  font-size: 25px;
+  color: green;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <body>
+  <div id="toppane">
+    <div id="contactinfo">
+      <div id="profilepicture"><img src="https://ayanavitality.com/wp-content/uploads/2016/03/MFettes-headshot-989x1024.jpg"></img>
+      </div>
+      <div id="contactdetails">
+        <div id="name">John A. Smith</div>
+        <div id="address">1 Infinite Loop Cupertino, CA 95014</div>
+        <div id="phonenumber">515-215-5555</div>
+        <div id="email"><a href="/cdn-cgi/l/email-protection#f1bb9e999fb0a29c988599b1b69c90989ddf929e9c"><span class="__cf_email__" data-cfemail="7d371215133c2e101409153d3a101c1411531e1210">[email&#160;protected]</span></a></div>
+        <div id="facebook"><p>f</p></div>
+        <div id="twitter"><p>t</p></div>
+        <div id="linkedin"><p>in</p></div>
+      </div>
+    </div>
+  </div>
+  <div id="bottompane">
+    <div id="experiencepane">
+      <div id="experiencetitle">Experience</div>
+      <div id="joblist">
+        <div class="jobwrapper">
+          <div class="job">
+            <div class="front">
+              <div class="position">Position One</div>
+              <div class="company">Global Comp Inc.</div>
+              <div class="employmentdates">1.23.18 - current</div>
+              <div class="jobaddress">123 Microsoft Dr. Beatrice, NB 78253</div>
+            </div>
+            <div class="back">
+              <div class="details">
+                <ul>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                  <li>Proin eu mollis elit. Aliquam et sem eget nisi iaculis vestibulum.</li>
+                  <li>Estibulum suscipit nulla eros, et cursus metus mattis vulputate.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="jobwrapper">
+          <div class="job">
+            <div class="front">
+              <div class="position">Position Two</div>
+              <div class="company">Global Comp Inc.</div>
+              <div class="employmentdates">1.23.18 - current</div>
+              <div class="jobaddress">123 Microsoft Dr. Beatrice, NB 78253</div>
+            </div>
+            <div class="back">
+              <div class="details">
+                <ul>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                  <li>Proin eu mollis elit. Aliquam et sem eget nisi iaculis vestibulum.</li>
+                  <li>Estibulum suscipit nulla eros, et cursus metus mattis vulputate.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="jobwrapper">
+          <div class="job">
+            <div class="front">
+              <div class="position">Position Three</div>
+              <div class="company">Global Comp Inc.</div>
+              <div class="employmentdates">1.23.18 - current</div>
+              <div class="jobaddress">123 Microsoft Dr. Beatrice, NB 78253</div>
+            </div>
+            <div class="back">
+              <div class="details">
+                <ul>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                  <li>Proin eu mollis elit. Aliquam et sem eget nisi iaculis vestibulum.</li>
+                  <li>Estibulum suscipit nulla eros, et cursus metus mattis vulputate.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="jobwrapper">
+          <div class="job">
+            <div class="front">
+              <div class="position">Position Four</div>
+              <div class="company">Global Comp Inc.</div>
+              <div class="employmentdates">1.23.18 - current</div>
+              <div class="jobaddress">123 Microsoft Dr. Beatrice, NB 78253</div>
+            </div>
+            <div class="back">
+              <div class="details">
+                <ul>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                  <li>Proin eu mollis elit. Aliquam et sem eget nisi iaculis vestibulum.</li>
+                  <li>Estibulum suscipit nulla eros, et cursus metus mattis vulputate.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="skillspane">
+      <div id="skillstitle">Skills</div>
+      <div id="skillchart">
+        <table>
+          <tr>
+            <td>HTML</td>
+            <td>
+              <div class="xpbar" style="width: 60%; background-color: red;">60%</div>
+            </td>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td>
+              <div class="xpbar" style="width: 50%; background-color: green;">50%</div>
+            </td>
+          </tr>
+          <tr>
+            <td>Javascript</td>
+            <td>
+              <div class="xpbar" style="width: 20%; background-color: blue;">20%</div>
+            </td>
+          </tr>
+          <tr>
+            <td>VBA</td>
+            <td>
+              <div class="xpbar" style="width: 80%; background-color: purple;">80%</div>
+            </td>
+          </tr>
+          <tr>
+            <td>C++</td>
+            <td>
+              <div class="xpbar" style="width: 10%; background-color: orange;">10%</div>
+            </td>
+          </tr>
+          <tr>
+            <td>C#</td>
+            <td>
+              <div class="xpbar" style="width: 10%; background-color: lightblue;">10%</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="educationtitle">Education</div>
+      <div id="educationpane">
+        
+        <div class="schoollisting">
+          <div class="schoolicon">
+            <span><i class="fas fa-university"></i></span>
+          </div>
+          <div class="school">Somekindof College</div>
+          <div class="schoolyears">2015 - 2019</div>
+          <div class="degree">Bachelors Degree</div>
+        </div>
+        <div class="schoollisting">
+          <div class="schoolicon">
+            <span><i class="fas fa-university"></i></span>
+          </div>
+          <div class="school">Justanother College</div>
+          <div class="schoolyears">2015 - 2019</div>
+          <div class="degree">Bachelors Degree</div>
+        </div>
+      </div>
+    </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+
+</body>
+
+</html>
